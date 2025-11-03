@@ -31,8 +31,10 @@ export default function Home() {
         </div>
 
         {/* Wobbly Image Shapes - Desert Daze style (hidden on mobile) */}
-        {/* Left Side - 1 bigger, 1 smaller */}
+
+        {/* BLOB 1: Large chess scene (top-left) */}
         <motion.div
+          data-blob="1-chess-top-left"
           className="hidden lg:block absolute left-16 top-32 w-72 h-72 opacity-60 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/chess-scene.jpg)',
@@ -44,7 +46,9 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
+        {/* BLOB 2: Small butterfly art (bottom-left) */}
         <motion.div
+          data-blob="2-butterfly-bottom-left"
           className="hidden lg:block absolute left-8 bottom-24 w-44 h-44 opacity-50 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/butterfly-art.jpg)',
@@ -56,8 +60,9 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
-        {/* Right Side - 2 medium, 1 small */}
+        {/* BLOB 3: Medium botanical art (top-right) */}
         <motion.div
+          data-blob="3-botanical-top-right"
           className="hidden lg:block absolute right-20 top-40 w-60 h-60 opacity-55 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/botanical-art.jpg)',
@@ -69,7 +74,9 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
+        {/* BLOB 4: Large ochre painting (bottom-right) */}
         <motion.div
+          data-blob="4-ochre-bottom-right"
           className="hidden lg:block absolute right-8 bottom-32 w-64 h-64 opacity-60 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/ochre-painting.jpg)',
@@ -81,7 +88,9 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
+        {/* BLOB 5: Small celebration photo (top-center-right) */}
         <motion.div
+          data-blob="5-celebration-top-center"
           className="hidden lg:block absolute right-1/4 top-20 w-36 h-36 opacity-45 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/248FFC77-9478-41C6-8ED6-3A55DB46E451-86619-00000D3A6BE9E23F.JPG)',
