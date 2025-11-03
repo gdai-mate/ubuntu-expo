@@ -313,7 +313,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   className={`relative overflow-hidden group cursor-pointer ${
-                    index >= 7 ? 'md:hidden' : ''
+                    index >= 6 ? 'md:hidden' : ''
                   } ${
                     index >= 7 ? 'after:absolute after:inset-0 after:bg-gradient-to-t after:from-background after:via-background/60 after:to-transparent after:z-10' : ''
                   }`}
