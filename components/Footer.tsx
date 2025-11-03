@@ -2,42 +2,44 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-muted border-t border-secondary/20">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-muted border-t border-primary/10 w-full flex justify-center">
+      <div className="w-full max-w-7xl mx-auto px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
-          <div>
-            <h3 className="text-2xl font-serif font-bold tracking-wider text-foreground mb-4">
-              UBUNTU
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl font-serif font-light tracking-[0.2em] text-foreground mb-3 uppercase">
+              Ubuntu
             </h3>
-            <p className="text-cream italic text-sm">I am because we are</p>
+            <p className="text-cream/60 italic text-sm font-light">I am because we are</p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-foreground font-semibold mb-4">Quick Links</h4>
-            <div className="space-y-2">
+          <div className="text-center">
+            <h4 className="text-foreground font-light mb-6 tracking-wider uppercase text-sm">
+              Navigate
+            </h4>
+            <div className="space-y-3">
               <Link
                 href="/"
-                className="block text-cream hover:text-primary transition-colors duration-200"
+                className="block text-cream/60 hover:text-primary transition-colors duration-300 text-sm font-light"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="block text-cream hover:text-primary transition-colors duration-200"
+                className="block text-cream/60 hover:text-primary transition-colors duration-300 text-sm font-light"
               >
                 About
               </Link>
               <Link
                 href="/gallery"
-                className="block text-cream hover:text-primary transition-colors duration-200"
+                className="block text-cream/60 hover:text-primary transition-colors duration-300 text-sm font-light"
               >
                 Gallery
               </Link>
               <Link
                 href="/contact"
-                className="block text-cream hover:text-primary transition-colors duration-200"
+                className="block text-cream/60 hover:text-primary transition-colors duration-300 text-sm font-light"
               >
                 Contact
               </Link>
@@ -45,29 +47,33 @@ export default function Footer() {
           </div>
 
           {/* Connect */}
-          <div>
-            <h4 className="text-foreground font-semibold mb-4">Connect</h4>
-            <div className="space-y-2">
+          <div className="text-center md:text-right">
+            <h4 className="text-foreground font-light mb-6 tracking-wider uppercase text-sm">
+              Connect
+            </h4>
+            <div className="space-y-3">
               <a
                 href="https://www.instagram.com/ubuntu.expo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-cream hover:text-primary transition-colors duration-200"
+                className="block text-cream/60 hover:text-primary transition-colors duration-300 text-sm font-light"
               >
                 @ubuntu.expo
               </a>
-              <p className="text-cream text-sm">Minjerribah (Stradbroke Island)</p>
+              <p className="text-cream/60 text-sm font-light">Minjerribah</p>
+              <p className="text-cream/60 text-sm font-light">Stradbroke Island</p>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-secondary/20 text-center">
-          <p className="text-cream text-sm mb-2">
-            Ubuntu Expo acknowledges the Traditional Custodians of Minjerribah, the Quandamooka People, and pays respect to Elders past, present, and emerging.
+        <div className="pt-12 border-t border-primary/10 text-center space-y-6">
+          <p className="text-cream/50 text-xs font-light leading-relaxed max-w-3xl mx-auto">
+            Ubuntu Expo acknowledges the Traditional Custodians of Minjerribah, the Quandamooka People,
+            and pays respect to Elders past, present, and emerging.
           </p>
-          <p className="text-cream/60 text-xs mt-4">
-            © {new Date().getFullYear()} Ubuntu Expo. All rights reserved.
+          <p className="text-cream/40 text-xs font-light tracking-wider">
+            © {new Date().getFullYear()} Ubuntu Expo
           </p>
         </div>
       </div>

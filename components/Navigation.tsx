@@ -9,7 +9,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 100);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -17,40 +17,43 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full flex justify-center ${
+        isScrolled ? 'bg-background/95 backdrop-blur-md border-b border-primary/10' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="w-full max-w-7xl mx-auto px-8 py-6">
+        <div className="flex items-center justify-between w-full">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-serif font-bold tracking-wider text-foreground hover:text-primary transition-colors">
-            UBUNTU
+          <Link
+            href="/"
+            className="text-xl font-serif font-light tracking-[0.2em] text-foreground hover:text-primary transition-colors duration-300 uppercase"
+          >
+            Ubuntu
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             <Link
               href="/"
-              className="text-cream hover:text-primary transition-colors duration-200"
+              className="text-sm text-cream/70 hover:text-primary transition-colors duration-300 font-light tracking-wider uppercase"
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="text-cream hover:text-primary transition-colors duration-200"
+              className="text-sm text-cream/70 hover:text-primary transition-colors duration-300 font-light tracking-wider uppercase"
             >
               About
             </Link>
             <Link
               href="/gallery"
-              className="text-cream hover:text-primary transition-colors duration-200"
+              className="text-sm text-cream/70 hover:text-primary transition-colors duration-300 font-light tracking-wider uppercase"
             >
               Gallery
             </Link>
             <Link
               href="/contact"
-              className="px-6 py-2 bg-primary text-background rounded-full hover:bg-accent transition-all duration-200 font-medium"
+              className="text-sm border border-primary/40 px-6 py-2 text-primary hover:bg-primary/10 transition-all duration-300 font-light tracking-wider uppercase"
             >
               Contact
             </Link>
@@ -67,7 +70,7 @@ export default function Navigation() {
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth="2"
+              strokeWidth="1"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
@@ -82,31 +85,31 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
+          <div className="md:hidden mt-8 pb-6 space-y-6 border-t border-primary/10 pt-6">
             <Link
               href="/"
-              className="block text-cream hover:text-primary transition-colors duration-200"
+              className="block text-sm text-cream/70 hover:text-primary transition-colors duration-300 font-light tracking-wider uppercase"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="block text-cream hover:text-primary transition-colors duration-200"
+              className="block text-sm text-cream/70 hover:text-primary transition-colors duration-300 font-light tracking-wider uppercase"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/gallery"
-              className="block text-cream hover:text-primary transition-colors duration-200"
+              className="block text-sm text-cream/70 hover:text-primary transition-colors duration-300 font-light tracking-wider uppercase"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Gallery
             </Link>
             <Link
               href="/contact"
-              className="block px-6 py-2 bg-primary text-background rounded-full hover:bg-accent transition-all duration-200 font-medium text-center"
+              className="block text-center text-sm border border-primary/40 px-6 py-2 text-primary hover:bg-primary/10 transition-all duration-300 font-light tracking-wider uppercase"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact

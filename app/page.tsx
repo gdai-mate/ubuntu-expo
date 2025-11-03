@@ -6,16 +6,18 @@ import { motion } from 'framer-motion';
 
 export default function Home() {
   const galleryImages = [
-    { src: '/images/ubuntu-ii/chess-scene.jpg', alt: 'Chess game under warm lamp' },
+    { src: '/images/ubuntu-ii/chess-scene.jpg', alt: 'Chess under warm light' },
     { src: '/images/ubuntu-ii/butterfly-art.jpg', alt: 'Indigenous butterfly art' },
-    { src: '/images/ubuntu-ii/botanical-art.jpg', alt: 'Botanical art prints' },
-    { src: '/images/ubuntu-ii/ochre-painting.jpg', alt: 'Ochre painting process' },
+    { src: '/images/ubuntu-ii/botanical-art.jpg', alt: 'Botanical installation' },
+    { src: '/images/ubuntu-ii/2AE85DC3-DB8F-43F1-81FC-411CCFCD3C7C-86619-00000D3FCD9C4744.JPG', alt: 'Community gathering' },
+    { src: '/images/ubuntu-ii/248FFC77-9478-41C6-8ED6-3A55DB46E451-86619-00000D3A6BE9E23F.JPG', alt: 'Celebration' },
+    { src: '/images/ubuntu-ii/67CCCC3F-56AD-4276-ADFC-3AA74CF8CA96-86619-00000D3AAE968FD6.JPG', alt: 'Community celebration' },
   ];
 
   return (
-    <div className="bg-background">
+    <div className="bg-background w-full">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen w-full flex items-center justify-center">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -25,155 +27,112 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <motion.h1
+        <div className="relative z-10 w-full flex flex-col items-center justify-center text-center px-6 py-32">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-6xl md:text-8xl font-serif font-bold tracking-widest text-foreground mb-6"
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="mb-32 w-full max-w-5xl"
           >
-            UBUNTU
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl font-serif italic text-cream mb-12"
-          >
-            I am because we are
-          </motion.p>
+            <h1 className="text-7xl md:text-9xl font-serif font-light tracking-[0.15em] text-foreground mb-8 uppercase">
+              Ubuntu
+            </h1>
+            <p className="text-xl md:text-2xl font-serif italic text-cream/90 font-light">
+              I am because we are
+            </p>
+          </motion.div>
 
           {/* Next Event Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-muted/90 backdrop-blur-sm border border-secondary/30 rounded-lg p-8 max-w-2xl mx-auto"
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+            className="border border-primary/20 bg-black/40 backdrop-blur-md rounded-none p-12 w-full max-w-xl"
           >
-            <h2 className="text-3xl font-serif font-semibold text-primary mb-4">Ubuntu III</h2>
-            <div className="space-y-2 text-cream">
+            <div className="border-b border-primary/20 pb-6 mb-6 text-center">
+              <h2 className="text-4xl font-serif font-light text-primary tracking-wider">
+                Ubuntu III
+              </h2>
+            </div>
+            <div className="space-y-3 text-cream/80 font-light text-center">
               <p className="text-lg">Mid-December 2025</p>
-              <p>Community Hall, Point Lookout</p>
-              <p>Minjerribah (Stradbroke Island)</p>
-              <p className="text-sm mt-4 italic">More details coming soon...</p>
+              <p className="text-sm tracking-wide">Community Hall, Point Lookout</p>
+              <p className="text-sm tracking-wide">Minjerribah, Stradbroke Island</p>
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-cream rounded-full flex justify-center">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 bg-cream rounded-full mt-2"
-            />
-          </div>
-        </motion.div>
       </section>
 
-      {/* Wave Divider */}
-      <div className="relative h-24 bg-background">
-        <svg
-          className="absolute bottom-0 w-full h-24"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0 C150,80 350,20 600,50 C850,80 1050,20 1200,60 L1200,120 L0,120 Z"
-            fill="#8b3a2e"
-            opacity="0.3"
-          />
-          <path
-            d="M0,20 C200,100 400,40 600,70 C800,100 1000,40 1200,80 L1200,120 L0,120 Z"
-            fill="#d4a354"
-            opacity="0.2"
-          />
-        </svg>
-      </div>
-
-      {/* About Preview */}
-      <section className="py-20 px-6 bg-gradient-to-b from-background to-muted">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6"
-          >
-            A Celebration of Community
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-cream leading-relaxed mb-8"
-          >
-            Ubuntu Expo brings together artists, musicians, and community on the sacred shores of
-            Minjerribah. We create space for connection, creativity, and cultural celebration.
-            Through art, music, photography, and food, we share the amazing things we all create.
-          </motion.p>
+      {/* Philosophy Section */}
+      <section className="py-40 px-6 bg-background w-full flex justify-center">
+        <div className="w-full max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
           >
-            <Link
-              href="/about"
-              className="inline-block px-8 py-3 bg-primary text-background rounded-full hover:bg-accent transition-all duration-200 font-medium"
-            >
-              Learn More About Ubuntu
-            </Link>
+            <p className="text-lg md:text-xl text-cream/70 leading-loose font-light">
+              Ubuntu Expo brings together artists, musicians, and community on the shores of
+              Minjerribah. A celebration of connection, creativity, and cultural expression.
+            </p>
+            <div className="pt-12">
+              <Link
+                href="/about"
+                className="inline-block border border-primary/40 px-10 py-4 text-primary hover:bg-primary/10 transition-all duration-300 font-light tracking-wider text-sm uppercase"
+              >
+                Discover Our Story
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent max-w-4xl mx-auto my-20" />
+
       {/* Gallery Preview */}
-      <section className="py-20 px-6 bg-muted">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
+      <section className="py-40 px-6 bg-background w-full flex justify-center">
+        <div className="w-full max-w-7xl">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-foreground text-center mb-12"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-24"
           >
-            Moments from Ubuntu II
-          </motion.h2>
+            <h2 className="text-5xl md:text-6xl font-serif font-light text-foreground tracking-wide mb-6">
+              Ubuntu II
+            </h2>
+            <p className="text-cream/60 font-light text-sm tracking-widest uppercase">
+              A Collection of Moments
+            </p>
+          </motion.div>
 
-          {/* Masonry Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+          {/* Refined Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 w-full">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative overflow-hidden rounded-lg group cursor-pointer"
-                style={{ height: index % 3 === 0 ? '400px' : '300px' }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="relative overflow-hidden group cursor-pointer"
+                style={{ height: '500px' }}
               >
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-500" />
               </motion.div>
             ))}
           </div>
@@ -181,7 +140,7 @@ export default function Home() {
           <div className="text-center">
             <Link
               href="/gallery"
-              className="inline-block px-8 py-3 bg-secondary text-foreground rounded-full hover:bg-terracotta transition-all duration-200 font-medium"
+              className="inline-block border border-primary/40 px-10 py-4 text-primary hover:bg-primary/10 transition-all duration-300 font-light tracking-wider text-sm uppercase"
             >
               View Full Gallery
             </Link>
@@ -189,57 +148,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-muted to-background">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
+      {/* Divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent max-w-4xl mx-auto my-20" />
+
+      {/* Contact CTA */}
+      <section className="py-40 px-6 bg-background w-full flex justify-center">
+        <div className="w-full max-w-5xl">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-foreground text-center mb-12"
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-16"
           >
-            Get Involved
-          </motion.h2>
+            <div>
+              <h2 className="text-5xl md:text-6xl font-serif font-light text-foreground tracking-wide mb-10">
+                Be Part of Ubuntu
+              </h2>
+              <p className="text-cream/70 max-w-2xl mx-auto leading-relaxed font-light text-lg">
+                For sponsorship opportunities, artist inquiries, or media partnerships
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Become a Sponsor',
-                description: 'Support local artists and help us create unforgettable experiences for our community.',
-                icon: '✨',
-              },
-              {
-                title: 'Perform With Us',
-                description: 'Share your art, music, or talent with the Ubuntu community. We celebrate all forms of expression.',
-                icon: '🎵',
-              },
-              {
-                title: 'Media Inquiries',
-                description: 'Press and media partners can reach out to learn more about our events and initiatives.',
-                icon: '📸',
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-muted border border-secondary/30 rounded-lg p-8 text-center hover:border-primary/50 transition-all duration-300"
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-4xl mx-auto">
+              <div className="space-y-4">
+                <h3 className="text-xl font-serif text-primary font-light tracking-wide">
+                  Sponsorship
+                </h3>
+                <p className="text-cream/60 text-sm font-light leading-relaxed">
+                  Support artists and cultural celebration
+                </p>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-serif text-primary font-light tracking-wide">
+                  Artists
+                </h3>
+                <p className="text-cream/60 text-sm font-light leading-relaxed">
+                  Share your work with our community
+                </p>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-serif text-primary font-light tracking-wide">
+                  Media
+                </h3>
+                <p className="text-cream/60 text-sm font-light leading-relaxed">
+                  Press inquiries and partnerships
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-8">
+              <Link
+                href="/contact"
+                className="inline-block bg-primary px-12 py-5 text-background hover:bg-accent transition-all duration-300 font-light tracking-wider text-sm uppercase"
               >
-                <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-2xl font-serif font-semibold text-foreground mb-4">{item.title}</h3>
-                <p className="text-cream mb-6">{item.description}</p>
-                <Link
-                  href="/contact"
-                  className="inline-block px-6 py-2 border border-primary text-primary rounded-full hover:bg-primary hover:text-background transition-all duration-200"
-                >
-                  Get in Touch
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                Get in Touch
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

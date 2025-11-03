@@ -31,12 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="w-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full m-0 p-0`}
       >
         <Navigation />
-        <main className="min-h-screen">
+        <main className="min-h-screen w-full">
           {children}
         </main>
         <Footer />

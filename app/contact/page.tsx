@@ -18,13 +18,10 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (replace with actual API call later)
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', inquiryType: 'general', message: '' });
-
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     }, 1500);
   };
@@ -37,43 +34,43 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-background pt-24 min-h-screen">
+    <div className="bg-background pt-32 min-h-screen w-full">
       {/* Header */}
-      <section className="py-20 px-6 bg-gradient-to-b from-background to-muted">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-32 px-6 w-full flex justify-center">
+        <div className="w-full max-w-4xl text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-6"
+            transition={{ duration: 0.8 }}
+            className="text-6xl md:text-7xl font-serif font-light tracking-[0.15em] text-foreground mb-8 uppercase"
           >
-            Get in Touch
+            Connect
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-cream max-w-2xl mx-auto"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg text-cream/70 max-w-2xl mx-auto font-light leading-relaxed"
           >
-            Whether you're interested in sponsoring, performing, covering our events, or just want to say hello—we'd love to hear from you.
+            For sponsorship opportunities, artist inquiries, or media partnerships
           </motion.p>
         </div>
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 px-6 bg-muted">
-        <div className="max-w-2xl mx-auto">
+      <section className="py-28 px-6 w-full flex justify-center">
+        <div className="w-full max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-background border border-secondary/30 rounded-lg p-8"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="border border-primary/20 p-12"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-8">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-cream font-medium mb-2">
-                  Name *
+                <label htmlFor="name" className="block text-cream/70 font-light mb-3 text-sm tracking-wider uppercase">
+                  Name
                 </label>
                 <input
                   type="text"
@@ -82,15 +79,15 @@ export default function Contact() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-muted border border-secondary/30 rounded-lg text-foreground placeholder-cream/50 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-6 py-4 bg-muted/30 border border-primary/20 text-foreground placeholder-cream/30 focus:outline-none focus:border-primary/40 transition-colors font-light"
                   placeholder="Your name"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-cream font-medium mb-2">
-                  Email *
+                <label htmlFor="email" className="block text-cream/70 font-light mb-3 text-sm tracking-wider uppercase">
+                  Email
                 </label>
                 <input
                   type="email"
@@ -99,15 +96,15 @@ export default function Contact() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-muted border border-secondary/30 rounded-lg text-foreground placeholder-cream/50 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-6 py-4 bg-muted/30 border border-primary/20 text-foreground placeholder-cream/30 focus:outline-none focus:border-primary/40 transition-colors font-light"
                   placeholder="your@email.com"
                 />
               </div>
 
               {/* Inquiry Type */}
               <div>
-                <label htmlFor="inquiryType" className="block text-cream font-medium mb-2">
-                  What's this about? *
+                <label htmlFor="inquiryType" className="block text-cream/70 font-light mb-3 text-sm tracking-wider uppercase">
+                  Inquiry Type
                 </label>
                 <select
                   id="inquiryType"
@@ -115,20 +112,20 @@ export default function Contact() {
                   required
                   value={formData.inquiryType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-muted border border-secondary/30 rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors"
+                  className="w-full px-6 py-4 bg-muted/30 border border-primary/20 text-foreground focus:outline-none focus:border-primary/40 transition-colors font-light"
                 >
                   <option value="general">General Inquiry</option>
                   <option value="sponsor">Sponsorship</option>
-                  <option value="performer">Perform With Us</option>
-                  <option value="media">Media Inquiry</option>
+                  <option value="performer">Artist / Performer</option>
+                  <option value="media">Media</option>
                   <option value="volunteer">Volunteer</option>
                 </select>
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-cream font-medium mb-2">
-                  Message *
+                <label htmlFor="message" className="block text-cream/70 font-light mb-3 text-sm tracking-wider uppercase">
+                  Message
                 </label>
                 <textarea
                   id="message"
@@ -137,7 +134,7 @@ export default function Contact() {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-muted border border-secondary/30 rounded-lg text-foreground placeholder-cream/50 focus:outline-none focus:border-primary transition-colors resize-none"
+                  className="w-full px-6 py-4 bg-muted/30 border border-primary/20 text-foreground placeholder-cream/30 focus:outline-none focus:border-primary/40 transition-colors resize-none font-light"
                   placeholder="Tell us more..."
                 />
               </div>
@@ -146,9 +143,9 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full py-4 rounded-full font-medium transition-all duration-200 ${
+                className={`w-full py-5 font-light transition-all duration-300 tracking-wider text-sm uppercase ${
                   isSubmitting
-                    ? 'bg-muted text-cream cursor-not-allowed'
+                    ? 'bg-muted/50 text-cream/30 cursor-not-allowed'
                     : 'bg-primary text-background hover:bg-accent'
                 }`}
               >
@@ -160,10 +157,10 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-primary/20 border border-primary rounded-lg text-center"
+                  className="p-6 border border-primary/40 text-center"
                 >
-                  <p className="text-primary font-medium">
-                    Thank you! We'll get back to you soon.
+                  <p className="text-primary font-light">
+                    Thank you. We will be in touch shortly.
                   </p>
                 </motion.div>
               )}
@@ -173,37 +170,33 @@ export default function Contact() {
       </section>
 
       {/* Alternative Contact */}
-      <section className="py-20 px-6 bg-gradient-to-b from-muted to-background">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-28 px-6 mb-28 w-full flex justify-center">
+        <div className="w-full max-w-4xl text-center space-y-16">
+          <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h2 className="text-3xl font-serif font-bold text-foreground mb-6">
-              Other Ways to Connect
-            </h2>
+            <div>
+              <p className="text-xs text-cream/50 uppercase tracking-widest mb-2">Instagram</p>
+              <a
+                href="https://www.instagram.com/ubuntu.expo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-accent transition-colors font-light"
+              >
+                @ubuntu.expo
+              </a>
+            </div>
 
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold text-primary mb-2">Instagram</h3>
-                <a
-                  href="https://www.instagram.com/ubuntu.expo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cream hover:text-primary transition-colors"
-                >
-                  @ubuntu.expo
-                </a>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold text-primary mb-2">Location</h3>
-                <p className="text-cream">Community Hall, Point Lookout</p>
-                <p className="text-cream">Minjerribah (Stradbroke Island), QLD</p>
-              </div>
+            <div>
+              <p className="text-xs text-cream/50 uppercase tracking-widest mb-2">Location</p>
+              <p className="text-cream/70 font-light">Community Hall, Point Lookout</p>
+              <p className="text-cream/70 font-light">Minjerribah, QLD</p>
             </div>
           </motion.div>
         </div>

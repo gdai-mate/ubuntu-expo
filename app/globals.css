@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #1a0f0a;
-  --foreground: #f5e6d3;
-  --primary: #d4a354;
-  --secondary: #8b3a2e;
-  --accent: #c8a858;
-  --muted: #3d2a1f;
-  --cream: #e8d5b7;
-  --terracotta: #c25a3a;
+  --background: #0a0604;
+  --foreground: #e8dcc8;
+  --primary: #b8936a;
+  --secondary: #8d7256;
+  --accent: #a08566;
+  --muted: #1a120d;
+  --cream: #d4c4b0;
+  --dark: #0f0a07;
 }
 
 @theme inline {
-  /* Ubuntu Expo Color Palette */
+  /* Refined Color Palette */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -21,24 +21,39 @@
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-cream: var(--cream);
-  --color-terracotta: var(--terracotta);
+  --color-dark: var(--dark);
 
-  /* Fonts */
-  --font-sans: 'Inter', var(--font-geist-sans);
-  --font-serif: 'Playfair Display', serif;
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
