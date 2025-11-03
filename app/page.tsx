@@ -2,14 +2,31 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Home() {
+  const { scrollY } = useScroll();
+
+  // BasePath for GitHub Pages deployment
+  const basePath = process.env.NODE_ENV === 'production' ? '/ubuntu-expo' : '';
+
+  // Parallax transforms - all blobs move faster than scroll (like raindrops falling up)
+  const y1 = useTransform(scrollY, [0, 2000], [0, -400]);
+  const y2 = useTransform(scrollY, [0, 2000], [0, -450]);
+  const y3 = useTransform(scrollY, [0, 2000], [0, -350]);
+  const y4 = useTransform(scrollY, [0, 2000], [0, -500]);
+  const y5 = useTransform(scrollY, [0, 2000], [0, -380]);
+  const y6 = useTransform(scrollY, [0, 2000], [0, -420]);
+  const y7 = useTransform(scrollY, [0, 2000], [0, -480]);
+  const y8 = useTransform(scrollY, [0, 2000], [0, -440]);
+  const y9 = useTransform(scrollY, [0, 2000], [0, -520]);
+  const y10 = useTransform(scrollY, [0, 2000], [0, -460]);
+
   const galleryImages = [
-    { src: '/images/ubuntu-ii/chess-scene.jpg', alt: 'Chess under warm light' },
-    { src: '/images/ubuntu-ii/butterfly-art.jpg', alt: 'Indigenous butterfly art' },
-    { src: '/images/ubuntu-ii/botanical-art.jpg', alt: 'Botanical installation' },
-    { src: '/images/ubuntu-ii/2AE85DC3-DB8F-43F1-81FC-411CCFCD3C7C-86619-00000D3FCD9C4744.JPG', alt: 'Community gathering' },
+    { src: '/images/ubuntu-ii/002F20E0-7B3B-464E-A5AA-EBBEEE1EED4E-86619-00000D3A073BA9D0.JPG', alt: 'Ubuntu gathering' },
+    { src: '/images/ubuntu-ii/03ED999D-0950-45EB-B973-DED868129CA6-86619-00000D3B10942F05.JPG', alt: 'Community art' },
+    { src: '/images/ubuntu-ii/1449754C-1565-490A-A734-F3101FC27CF0-86619-00000D3DA7AFF9BE.JPG', alt: 'Cultural celebration' },
+    { src: '/images/ubuntu-ii/1D34948E-8FD5-4EEB-8D61-1C41EA3ADE31-86619-00000D3CD80EDE2C.JPG', alt: 'Community moment' },
     { src: '/images/ubuntu-ii/248FFC77-9478-41C6-8ED6-3A55DB46E451-86619-00000D3A6BE9E23F.JPG', alt: 'Celebration' },
     { src: '/images/ubuntu-ii/67CCCC3F-56AD-4276-ADFC-3AA74CF8CA96-86619-00000D3AAE968FD6.JPG', alt: 'Community celebration' },
   ];
@@ -31,74 +48,170 @@ export default function Home() {
         </div>
 
         {/* Wobbly Image Shapes - Desert Daze style (hidden on mobile) */}
+        {/* LEFT SIDE BLOBS (1-5) */}
 
-        {/* BLOB 1: Large chess scene (top-left) */}
+        {/* BLOB 1: Top-left corner */}
         <motion.div
-          data-blob="1-chess-top-left"
-          className="hidden lg:block absolute left-16 top-32 w-72 h-72 opacity-100 overflow-hidden"
+          data-blob="1-left-top"
+          className="hidden lg:block absolute left-8 top-16 w-72 h-72 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: 'url(/images/ubuntu-ii/chess-scene.jpg)',
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/027FC2CD-B853-48A2-8175-1BD02F31513B-86619-00000D3EDF7393D4.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            animation: 'blob-morph-1 10s ease-in-out infinite alternate'
+            animation: 'blob-morph-1 10s ease-in-out infinite alternate',
+            y: y1
           }}
           whileHover={{ scale: 1.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
-        {/* BLOB 2: Small butterfly art (bottom-left) */}
+        {/* BLOB 2: Middle-left, near event card */}
         <motion.div
-          data-blob="2-butterfly-bottom-left"
-          className="hidden lg:block absolute left-8 bottom-24 w-44 h-44 opacity-100 overflow-hidden"
+          data-blob="2-left-middle"
+          className="hidden lg:block absolute w-36 h-36 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: 'url(/images/ubuntu-ii/butterfly-art.jpg)',
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/butterfly-art.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            animation: 'blob-morph-2 12s ease-in-out infinite alternate'
+            animation: 'blob-morph-1 13s ease-in-out infinite alternate',
+            left: 'calc(50% - 415px)',
+            top: 'calc(50vh + 80px)',
+            y: y2
+          }}
+          whileHover={{ scale: 1.25 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
+
+        {/* BLOB 3: Middle-left edge (between blobs 1 and 4) */}
+        <motion.div
+          data-blob="3-left-middle-edge"
+          className="hidden lg:block absolute w-44 h-44 opacity-100 overflow-hidden"
+          style={{
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/EE7F21EA-7082-4534-8286-2885020F9D44-86619-00000D3A85F2B435.JPG)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'blob-morph-2 12s ease-in-out infinite alternate',
+            left: 'calc(2.5rem + 150px)',
+            top: 'calc(50vh - 70px)',
+            y: y3
           }}
           whileHover={{ scale: 1.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
-        {/* BLOB 3: Medium botanical art (middle-right) */}
+        {/* BLOB 4: Lower-left */}
         <motion.div
-          data-blob="3-botanical-top-right"
-          className="hidden lg:block absolute right-20 top-1/2 -translate-y-16 w-60 h-60 opacity-100 overflow-hidden"
+          data-blob="4-left-lower"
+          className="hidden lg:block absolute left-12 w-52 h-52 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: 'url(/images/ubuntu-ii/botanical-art.jpg)',
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/botanical-art.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            animation: 'blob-morph-3 11s ease-in-out infinite alternate'
+            animation: 'blob-morph-2 15s ease-in-out infinite alternate',
+            top: '70vh',
+            y: y4
           }}
           whileHover={{ scale: 1.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
-        {/* BLOB 4: Large ochre painting (bottom-right) */}
+        {/* BLOB 5: Lower center-left */}
         <motion.div
-          data-blob="4-ochre-bottom-right"
-          className="hidden lg:block absolute right-8 bottom-32 w-64 h-64 opacity-100 overflow-hidden"
+          data-blob="5-left-lower-center"
+          className="hidden lg:block absolute w-40 h-40 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: 'url(/images/ubuntu-ii/ochre-painting.jpg)',
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/2AE85DC3-DB8F-43F1-81FC-411CCFCD3C7C-86619-00000D3FCD9C4744.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            animation: 'blob-morph-4 14s ease-in-out infinite alternate'
+            animation: 'blob-morph-4 14s ease-in-out infinite alternate',
+            left: 'calc(30% - 80px)',
+            top: '85vh',
+            y: y5
+          }}
+          whileHover={{ scale: 1.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
+
+        {/* RIGHT SIDE BLOBS (6-10) */}
+
+        {/* BLOB 6: Top-right corner */}
+        <motion.div
+          data-blob="6-right-top"
+          className="hidden lg:block absolute right-16 top-20 w-60 h-60 opacity-100 overflow-hidden"
+          style={{
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/C70513BC-CCE4-4824-8D9E-9D2580F75601-86619-00000D3B593C5F02.JPG)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'blob-morph-3 11s ease-in-out infinite alternate',
+            y: y6
           }}
           whileHover={{ scale: 1.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
-        {/* BLOB 5: Small celebration photo (top-center-right) */}
+        {/* BLOB 7: Middle-right edge (between top and bottom) */}
         <motion.div
-          data-blob="5-celebration-top-center"
-          className="hidden lg:block absolute right-1/4 top-20 w-36 h-36 opacity-100 overflow-hidden"
+          data-blob="7-right-middle-edge"
+          className="hidden lg:block absolute w-56 h-56 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: 'url(/images/ubuntu-ii/248FFC77-9478-41C6-8ED6-3A55DB46E451-86619-00000D3A6BE9E23F.JPG)',
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/280E68C6-8972-4D8F-B2DC-51093CA8808C-86619-00000D3FC99C9404.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            animation: 'blob-morph-5 9s ease-in-out infinite alternate'
+            animation: 'blob-morph-3 17s ease-in-out infinite alternate',
+            right: 'calc(3rem + 150px)',
+            top: 'calc(50vh - 120px)',
+            y: y7
+          }}
+          whileHover={{ scale: 1.15 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
+
+        {/* BLOB 8: Middle-right, near event card */}
+        <motion.div
+          data-blob="8-right-middle"
+          className="hidden lg:block absolute w-36 h-36 opacity-100 overflow-hidden"
+          style={{
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/chess-scene.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'blob-morph-5 9s ease-in-out infinite alternate',
+            right: 'calc(50% - 415px)',
+            top: 'calc(50vh + 80px)',
+            y: y8
           }}
           whileHover={{ scale: 1.25 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
+
+        {/* BLOB 9: Bottom-right corner */}
+        <motion.div
+          data-blob="9-right-bottom"
+          className="hidden lg:block absolute right-8 bottom-20 w-64 h-64 opacity-100 overflow-hidden"
+          style={{
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/43453325-87C7-4CAA-9DCA-9748B2BCB707-86619-00000D3E8FAB43FE.JPG)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'blob-morph-4 14s ease-in-out infinite alternate',
+            y: y9
+          }}
+          whileHover={{ scale: 1.15 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
+
+        {/* BLOB 10: Lower center-right */}
+        <motion.div
+          data-blob="10-right-lower-center"
+          className="hidden lg:block absolute w-44 h-44 opacity-100 overflow-hidden"
+          style={{
+            backgroundImage: `url(${basePath}/images/ubuntu-ii/92CD1F78-4397-44F8-A687-0BA036A8E4AC-86619-00000D40563BA310.JPG)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'blob-morph-5 16s ease-in-out infinite alternate',
+            right: 'calc(30% - 88px)',
+            top: '90vh',
+            y: y10
+          }}
+          whileHover={{ scale: 1.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
