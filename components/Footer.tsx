@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-primary/10 text-center space-y-6">
+        <div className="pt-12 border-t border-primary/10 text-center space-y-6 relative">
           <p className="text-cream/50 text-xs font-light leading-relaxed max-w-3xl mx-auto">
             Ubuntu Expo acknowledges the Traditional Custodians of Minjerribah, the Quandamooka People,
             and pays respect to Elders past, present, and emerging.
@@ -75,6 +75,16 @@ export default function Footer() {
           <p className="text-cream/40 text-xs font-light tracking-wider">
             © {new Date().getFullYear()} Ubuntu Expo
           </p>
+
+          {/* Designer Watermark */}
+          <a
+            href="https://asgardbishop.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-0 right-0 text-cream/30 hover:text-primary/60 transition-colors duration-300 text-xs font-light"
+          >
+            Website designed by AsgardBishop.com
+          </a>
         </div>
       </div>
     </footer>
