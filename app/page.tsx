@@ -23,12 +23,15 @@ export default function Home() {
   const y10 = useTransform(scrollY, [0, 2000], [0, -460]);
 
   const galleryImages = [
-    { src: '/images/ubuntu-ii/002F20E0-7B3B-464E-A5AA-EBBEEE1EED4E-86619-00000D3A073BA9D0.JPG', alt: 'Ubuntu gathering' },
-    { src: '/images/ubuntu-ii/03ED999D-0950-45EB-B973-DED868129CA6-86619-00000D3B10942F05.JPG', alt: 'Community art' },
-    { src: '/images/ubuntu-ii/1449754C-1565-490A-A734-F3101FC27CF0-86619-00000D3DA7AFF9BE.JPG', alt: 'Cultural celebration' },
-    { src: '/images/ubuntu-ii/1D34948E-8FD5-4EEB-8D61-1C41EA3ADE31-86619-00000D3CD80EDE2C.JPG', alt: 'Community moment' },
-    { src: '/images/ubuntu-ii/248FFC77-9478-41C6-8ED6-3A55DB46E451-86619-00000D3A6BE9E23F.JPG', alt: 'Celebration' },
-    { src: '/images/ubuntu-ii/67CCCC3F-56AD-4276-ADFC-3AA74CF8CA96-86619-00000D3AAE968FD6.JPG', alt: 'Community celebration' },
+    { src: `${basePath}/images/ubuntu-ii/002F20E0-7B3B-464E-A5AA-EBBEEE1EED4E-86619-00000D3A073BA9D0.JPG`, alt: 'Ubuntu gathering' },
+    { src: `${basePath}/images/ubuntu-ii/03ED999D-0950-45EB-B973-DED868129CA6-86619-00000D3B10942F05.JPG`, alt: 'Community art' },
+    { src: `${basePath}/images/ubuntu-ii/1449754C-1565-490A-A734-F3101FC27CF0-86619-00000D3DA7AFF9BE.JPG`, alt: 'Cultural celebration' },
+    { src: `${basePath}/images/ubuntu-ii/1D34948E-8FD5-4EEB-8D61-1C41EA3ADE31-86619-00000D3CD80EDE2C.JPG`, alt: 'Community moment' },
+    { src: `${basePath}/images/ubuntu-ii/248FFC77-9478-41C6-8ED6-3A55DB46E451-86619-00000D3A6BE9E23F.JPG`, alt: 'Celebration' },
+    { src: `${basePath}/images/ubuntu-ii/67CCCC3F-56AD-4276-ADFC-3AA74CF8CA96-86619-00000D3AAE968FD6.JPG`, alt: 'Community celebration' },
+    { src: `${basePath}/images/ubuntu-ii/92CD1F78-4397-44F8-A687-0BA036A8E4AC-86619-00000D40563BA310.JPG`, alt: 'Evening gathering' },
+    { src: `${basePath}/images/ubuntu-ii/butterfly-art.jpg`, alt: 'Body paint art' },
+    { src: `${basePath}/images/ubuntu-ii/chess-scene.jpg`, alt: 'Ark of Pangea jewelry' },
   ];
 
   return (
@@ -38,7 +41,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/hero.jpg"
+            src={`${basePath}/images/hero.jpg`}
             alt="Ubuntu Expo community gathering"
             fill
             className="object-cover"
@@ -300,35 +303,41 @@ export default function Home() {
           </motion.div>
 
           {/* Refined Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 w-full">
-            {galleryImages.map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="relative overflow-hidden group cursor-pointer"
-                style={{ height: '500px' }}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-500" />
-              </motion.div>
-            ))}
-          </div>
+          <div className="relative">
+            <div className="grid grid-cols-3 md:grid-cols-2 gap-2 md:gap-8 mb-20 md:mb-20 w-full">
+              {galleryImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className={`relative overflow-hidden group cursor-pointer ${
+                    index >= 7 ? 'md:hidden' : ''
+                  } ${
+                    index >= 7 ? 'after:absolute after:inset-0 after:bg-gradient-to-t after:from-background after:via-background/60 after:to-transparent after:z-10' : ''
+                  }`}
+                  style={{ aspectRatio: '1/1', height: 'auto' }}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-500" />
+                </motion.div>
+              ))}
+            </div>
 
-          <div className="text-center">
-            <Link
-              href="/gallery"
-              className="inline-block border border-primary/40 px-10 py-4 text-primary hover:bg-primary/10 transition-all duration-300 font-light tracking-wider text-sm uppercase"
-            >
-              View Full Gallery
-            </Link>
+            <div className="text-center absolute md:relative bottom-0 left-0 right-0 z-20 md:z-auto pb-8 md:pb-0">
+              <Link
+                href="/gallery"
+                className="inline-block border border-primary/40 px-10 py-4 text-primary hover:bg-primary/10 transition-all duration-300 font-light tracking-wider text-sm uppercase bg-background/95 md:bg-transparent backdrop-blur-sm"
+              >
+                View Full Gallery
+              </Link>
+            </div>
           </div>
         </div>
       </section>
