@@ -2,10 +2,13 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import GalleryLightbox from '@/components/GalleryLightbox';
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState<'all' | 'ubuntu-i' | 'ubuntu-ii'>('all');
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const ubuntuIIImages = [
     { src: '/images/hero.jpg', alt: 'Community gathering silhouettes', event: 'ubuntu-ii' },
@@ -133,6 +136,10 @@ export default function Gallery() {
                 style={{
                   height: index % 5 === 0 ? '550px' : index % 3 === 0 ? '450px' : '400px'
                 }}
+                onClick={() => {
+                  setLightboxIndex(index);
+                  setLightboxOpen(true);
+                }}
               >
                 <Image
                   src={image.src}
@@ -168,6 +175,17 @@ export default function Gallery() {
           </div>
         </section>
       )}
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <GalleryLightbox
+            images={filteredImages}
+            currentIndex={lightboxIndex}
+            onClose={() => setLightboxOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -5,8 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Uncomment the line below if deploying to GitHub Pages project (not custom domain)
-  // basePath: '/ubuntu-expo',
+  basePath: '/ubuntu-expo',
 };
 
 export default nextConfig;
