@@ -35,70 +35,70 @@ export default function Home() {
         {/* BLOB 1: Large chess scene (top-left) */}
         <motion.div
           data-blob="1-chess-top-left"
-          className="hidden lg:block absolute left-16 top-32 w-72 h-72 opacity-60 overflow-hidden"
+          className="hidden lg:block absolute left-16 top-32 w-72 h-72 opacity-100 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/chess-scene.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-1 10s ease-in-out infinite alternate'
           }}
-          whileHover={{ scale: 1.15, opacity: 0.85 }}
+          whileHover={{ scale: 1.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
         {/* BLOB 2: Small butterfly art (bottom-left) */}
         <motion.div
           data-blob="2-butterfly-bottom-left"
-          className="hidden lg:block absolute left-8 bottom-24 w-44 h-44 opacity-50 overflow-hidden"
+          className="hidden lg:block absolute left-8 bottom-24 w-44 h-44 opacity-100 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/butterfly-art.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-2 12s ease-in-out infinite alternate'
           }}
-          whileHover={{ scale: 1.2, opacity: 0.75 }}
+          whileHover={{ scale: 1.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
         {/* BLOB 3: Medium botanical art (top-right) */}
         <motion.div
           data-blob="3-botanical-top-right"
-          className="hidden lg:block absolute right-20 top-40 w-60 h-60 opacity-55 overflow-hidden"
+          className="hidden lg:block absolute right-20 top-40 w-60 h-60 opacity-100 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/botanical-art.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-3 11s ease-in-out infinite alternate'
           }}
-          whileHover={{ scale: 1.15, opacity: 0.8 }}
+          whileHover={{ scale: 1.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
         {/* BLOB 4: Large ochre painting (bottom-right) */}
         <motion.div
           data-blob="4-ochre-bottom-right"
-          className="hidden lg:block absolute right-8 bottom-32 w-64 h-64 opacity-60 overflow-hidden"
+          className="hidden lg:block absolute right-8 bottom-32 w-64 h-64 opacity-100 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/ochre-painting.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-4 14s ease-in-out infinite alternate'
           }}
-          whileHover={{ scale: 1.15, opacity: 0.85 }}
+          whileHover={{ scale: 1.15 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
         {/* BLOB 5: Small celebration photo (top-center-right) */}
         <motion.div
           data-blob="5-celebration-top-center"
-          className="hidden lg:block absolute right-1/4 top-20 w-36 h-36 opacity-45 overflow-hidden"
+          className="hidden lg:block absolute right-1/4 top-20 w-36 h-36 opacity-100 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/248FFC77-9478-41C6-8ED6-3A55DB46E451-86619-00000D3A6BE9E23F.JPG)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-5 9s ease-in-out infinite alternate'
           }}
-          whileHover={{ scale: 1.25, opacity: 0.7 }}
+          whileHover={{ scale: 1.25 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
