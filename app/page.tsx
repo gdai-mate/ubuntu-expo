@@ -60,10 +60,10 @@ export default function Home() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
 
-        {/* BLOB 3: Medium botanical art (top-right) */}
+        {/* BLOB 3: Medium botanical art (middle-right) */}
         <motion.div
           data-blob="3-botanical-top-right"
-          className="hidden lg:block absolute right-20 top-40 w-60 h-60 opacity-100 overflow-hidden"
+          className="hidden lg:block absolute right-20 top-1/2 -translate-y-16 w-60 h-60 opacity-100 overflow-hidden"
           style={{
             backgroundImage: 'url(/images/ubuntu-ii/botanical-art.jpg)',
             backgroundSize: 'cover',
