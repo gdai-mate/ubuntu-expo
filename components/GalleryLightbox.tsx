@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface GalleryLightboxProps {
-  images: { src: string; alt: string; event: string }[];
+  images: { src: string; alt?: string; caption?: string; event: string }[];
   currentIndex: number;
   onClose: () => void;
 }
@@ -101,7 +101,7 @@ export default function GalleryLightbox({ images, currentIndex, onClose }: Galle
           >
             <Image
               src={images[index].src}
-              alt={images[index].alt}
+              alt={images[index].caption || images[index].alt || 'Gallery image'}
               fill
               className="object-contain"
               priority
@@ -114,7 +114,7 @@ export default function GalleryLightbox({ images, currentIndex, onClose }: Galle
           <p className="text-primary font-serif text-sm uppercase tracking-wider mb-2">
             {images[index].event === 'ubuntu-i' ? 'Ubuntu I' : 'Ubuntu II'}
           </p>
-          <p className="text-cream/70 text-sm font-light">{images[index].alt}</p>
+          <p className="text-cream/70 text-sm font-light">{images[index].caption || images[index].alt}</p>
         </div>
       </div>
     </motion.div>
