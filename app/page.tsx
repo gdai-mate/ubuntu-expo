@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import VideoPlayer from '@/components/VideoPlayer';
+import VimeoPlayer from '@/components/VimeoPlayer';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -352,8 +352,8 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <VideoPlayer
-              src="https://github.com/gdai-mate/ubuntu-expo/releases/download/v1.0.0-media/UBUNTU_VIDEO.2.mp4"
+            <VimeoPlayer
+              videoId="1133722856"
               title="Ubuntu I"
               description="Experience the spirit of Ubuntu through this visual journey from our inaugural gathering on Minjerribah"
             />

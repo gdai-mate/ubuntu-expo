@@ -49,14 +49,24 @@ export default function VideoPlayer({
     };
   }, []);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
+      try {
+        if (isPlaying) {
+          videoRef.current.pause();
+          setIsPlaying(false);
+        } else {
+          await videoRef.current.play();
+          setIsPlaying(true);
+        }
+      } catch (error) {
+        console.error('Video playback error:', error);
+        // If autoplay fails, user needs to interact first
+        if (error instanceof Error && error.name === 'NotSupportedError') {
+          alert('Video format not supported by your browser. The video will download instead.');
+          window.open(src, '_blank');
+        }
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -102,6 +112,17 @@ export default function VideoPlayer({
           )}
         </div>
       )}
+
+      {/* Download Button (fallback if video doesn't play) */}
+      <div className="mb-4 text-center">
+        <a
+          href={src}
+          download
+          className="inline-block px-6 py-3 border border-primary/40 text-primary hover:bg-primary hover:text-background transition-all duration-300 text-sm font-light tracking-wider uppercase"
+        >
+          Download Video
+        </a>
+      </div>
 
       {/* Video Container */}
       <div
