@@ -34,8 +34,9 @@ export const metadata: Metadata = {
     "island events",
   ],
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+    shortcut: "/favicon.svg",
   },
   openGraph: {
     title: "Ubuntu Expo - Art, Culture & Music Festival | Minjerribah",
