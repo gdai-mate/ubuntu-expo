@@ -1,8 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function About() {
+  const { scrollY } = useScroll();
+
+  // Parallax transforms for blobs
+  const y1 = useTransform(scrollY, [0, 2000], [0, -300]);
+  const y2 = useTransform(scrollY, [0, 2000], [0, -400]);
+  const y3 = useTransform(scrollY, [0, 2000], [0, -350]);
+
   return (
     <div className="bg-background pt-32 w-full">
       {/* Hero */}
@@ -112,8 +119,54 @@ export default function About() {
       <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent max-w-3xl mx-auto my-32" />
 
       {/* Location */}
-      <section className="py-24 px-6 mb-32 w-full flex justify-center">
-        <div className="w-full max-w-3xl text-center">
+      <section className="relative py-24 px-6 mb-32 w-full flex justify-center overflow-hidden">
+        {/* Animated Blobs - Desktop Only */}
+        {/* BLOB 1: Top left */}
+        <motion.div
+          data-blob="about-1"
+          className="hidden lg:block absolute w-52 h-52 opacity-90 overflow-hidden pointer-events-none"
+          style={{
+            backgroundImage: `url(/images/straddie-aerial.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'blob-morph-1 14s ease-in-out infinite alternate',
+            left: '5%',
+            top: '10%',
+            y: y1
+          }}
+        />
+
+        {/* BLOB 2: Top right */}
+        <motion.div
+          data-blob="about-2"
+          className="hidden lg:block absolute w-40 h-40 opacity-80 overflow-hidden pointer-events-none"
+          style={{
+            backgroundImage: `url(/images/hero.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'blob-morph-2 16s ease-in-out infinite alternate',
+            right: '8%',
+            top: '15%',
+            y: y2
+          }}
+        />
+
+        {/* BLOB 3: Bottom left */}
+        <motion.div
+          data-blob="about-3"
+          className="hidden lg:block absolute w-48 h-48 opacity-85 overflow-hidden pointer-events-none"
+          style={{
+            backgroundImage: `url(/images/ubuntu-ii/002F20E0-7B3B-464E-A5AA-EBBEEE1EED4E-86619-00000D3A073BA9D0.JPG)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'blob-morph-3 15s ease-in-out infinite alternate',
+            left: '10%',
+            bottom: '20%',
+            y: y3
+          }}
+        />
+
+        <div className="w-full max-w-3xl text-center relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

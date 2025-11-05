@@ -355,7 +355,7 @@ export default function Home() {
             <VimeoPlayer
               videoId="1133722856"
               title="Ubuntu I"
-              description="Experience the spirit of Ubuntu through this visual journey from our inaugural gathering on Minjerribah"
+              description="Experience the spirit of Ubuntu through this visual journey from our regular gathering on Minjerribah"
             />
           </motion.div>
         </div>
