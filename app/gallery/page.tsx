@@ -154,7 +154,7 @@ export default function Gallery() {
               >
                 <Image
                   src={image.src}
-                  alt={'caption' in image ? image.caption : image.alt}
+                  alt={image.caption}
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
@@ -163,7 +163,7 @@ export default function Gallery() {
                   <p className="text-primary font-serif text-sm uppercase tracking-wider mb-1">
                     {image.event === 'ubuntu-i' ? 'Ubuntu I' : 'Ubuntu II'}
                   </p>
-                  <p className="text-cream/80 text-sm font-light">{'caption' in image ? image.caption : image.alt}</p>
+                  <p className="text-cream/80 text-sm font-light">{image.caption}</p>
                 </div>
               </motion.div>
             ))}
