@@ -18,12 +18,40 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          inquiry_type: formData.inquiryType,
+          message: formData.message,
+          subject: `Ubuntu Expo Contact Form - ${formData.inquiryType}`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', inquiryType: 'general', message: '' });
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setIsSubmitting(false);
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', inquiryType: 'general', message: '' });
+      setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 5000);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -52,7 +80,8 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg text-cream/70 max-w-2xl mx-auto font-light leading-relaxed"
           >
-            For sponsorship opportunities, artist inquiries, or media partnerships
+            Connect with Ubuntu Expo on North Stradbroke Island for sponsorship opportunities,
+            artist inquiries, or media partnerships
           </motion.p>
         </div>
       </section>
@@ -164,6 +193,19 @@ export default function Contact() {
                   </p>
                 </motion.div>
               )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-6 border border-red-500/40 text-center"
+                >
+                  <p className="text-red-500 font-light">
+                    Something went wrong. Please try again or contact us directly via Instagram.
+                  </p>
+                </motion.div>
+              )}
             </form>
           </motion.div>
         </div>
@@ -196,7 +238,8 @@ export default function Contact() {
             <div>
               <p className="text-xs text-cream/50 uppercase tracking-widest mb-2">Location</p>
               <p className="text-cream/70 font-light">Community Hall, Point Lookout</p>
-              <p className="text-cream/70 font-light">Minjerribah, QLD</p>
+              <p className="text-cream/70 font-light">Minjerribah (North Stradbroke Island)</p>
+              <p className="text-cream/70 font-light">Queensland, Australia</p>
             </div>
           </motion.div>
         </div>

@@ -1,0 +1,11 @@
+# Ubuntu Expo - Robots.txt
+# https://ubuntu-expo.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ubuntu-expo.com/sitemap.xml
+
+# Crawl-delay (optional, helps with server load)
+Crawl-delay: 1

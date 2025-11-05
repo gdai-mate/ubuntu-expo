@@ -51,8 +51,9 @@ export default function About() {
             </p>
 
             <p className="text-lg text-cream/70 leading-loose font-light text-center">
-              On the sacred shores of Minjerribah, we gather to create a space where artists,
-              musicians, and community can share their gifts and celebrate what we create together.
+              On the sacred shores of Minjerribah (North Stradbroke Island), we gather at Point Lookout
+              Community Hall to create a space where artists, musicians, and community can share their
+              gifts and celebrate what we create together on Quandamooka Country.
             </p>
           </motion.div>
         </div>
@@ -131,8 +132,10 @@ export default function About() {
             className="space-y-6 text-cream/70 font-light"
           >
             <p className="text-lg leading-loose">
-              Ubuntu Expo takes place on Minjerribah, the ancestral home of the Quandamooka People.
-              This sacred island provides the perfect backdrop for our celebrations of art and culture.
+              Ubuntu Expo takes place on Minjerribah (North Stradbroke Island, Straddie), the ancestral home
+              of the Quandamooka People. This sacred island in Queensland's beautiful Moreton Bay provides
+              the perfect backdrop for our celebrations of art, music, and culture. Located at Point Lookout,
+              our festival brings together the island community and visitors for unique cultural experiences.
             </p>
 
             <p className="text-sm text-cream/50 leading-relaxed pt-8">
