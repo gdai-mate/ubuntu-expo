@@ -49,10 +49,16 @@ export default function Gallery() {
   ];
 
   const ubuntuIImages = [
-    { src: 'https://placehold.co/600x400/1a120d/b8936a?text=Ubuntu+I', alt: 'Ubuntu I placeholder 1', event: 'ubuntu-i' },
-    { src: 'https://placehold.co/600x600/0a0604/8d7256?text=Ubuntu+I', alt: 'Ubuntu I placeholder 2', event: 'ubuntu-i' },
-    { src: 'https://placehold.co/600x400/0f0a07/a08566?text=Ubuntu+I', alt: 'Ubuntu I placeholder 3', event: 'ubuntu-i' },
-    { src: 'https://placehold.co/600x500/1a120d/d4c4b0?text=Ubuntu+I', alt: 'Ubuntu I placeholder 4', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0434.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0445.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0449.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0450.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0457.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0460.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0466.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0469.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0478.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
+    { src: "/images/ubuntu-i/IMG_0483.JPG", caption: 'taken by danillo gianni', event: 'ubuntu-i' },
   ];
 
   const allImages = [...ubuntuIIImages, ...ubuntuIImages];
@@ -171,15 +177,6 @@ export default function Gallery() {
         </div>
       </section>
 
-      {activeFilter === 'ubuntu-i' && (
-        <section className="py-16 px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-cream/40 italic font-light text-sm">
-              Ubuntu I archive coming soon
-            </p>
-          </div>
-        </section>
-      )}
 
       {/* Lightbox */}
       <AnimatePresence>
