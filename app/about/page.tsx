@@ -9,6 +9,7 @@ export default function About() {
   const y1 = useTransform(scrollY, [0, 2000], [0, -300]);
   const y2 = useTransform(scrollY, [0, 2000], [0, -400]);
   const y3 = useTransform(scrollY, [0, 2000], [0, -350]);
+  const y4 = useTransform(scrollY, [0, 2000], [0, -320]);
 
   return (
     <div className="bg-background pt-32 w-full">
@@ -121,48 +122,59 @@ export default function About() {
       {/* Location */}
       <section className="relative py-24 px-6 mb-32 w-full flex justify-center overflow-hidden">
         {/* Animated Blobs - Desktop Only */}
-        {/* BLOB 1: Left side, middle */}
-        <motion.div
+        {/* BLOB 1: Left side, lower */}
+        <div
           data-blob="about-1"
-          className="hidden lg:block absolute w-56 h-56 opacity-70 overflow-hidden pointer-events-none"
+          className="hidden lg:block absolute w-60 h-60 opacity-65 overflow-hidden pointer-events-none"
           style={{
-            backgroundImage: `url(/images/straddie-aerial.jpg)`,
+            backgroundImage: `url(/images/straddie-sunrise.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-1 14s ease-in-out infinite alternate',
-            left: '2%',
-            top: '35%',
-            y: y1
+            left: '3%',
+            bottom: '35%'
           }}
         />
 
-        {/* BLOB 2: Right side, upper */}
-        <motion.div
+        {/* BLOB 2: Right side, lower */}
+        <div
           data-blob="about-2"
-          className="hidden lg:block absolute w-64 h-64 opacity-60 overflow-hidden pointer-events-none"
+          className="hidden lg:block absolute w-56 h-56 opacity-70 overflow-hidden pointer-events-none"
           style={{
-            backgroundImage: `url(/images/hero.jpg)`,
+            backgroundImage: `url(/images/straddie-coastal.png)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-2 16s ease-in-out infinite alternate',
-            right: '3%',
-            top: '20%',
-            y: y2
+            right: '2%',
+            bottom: '40%'
           }}
         />
 
-        {/* BLOB 3: Right side, lower */}
-        <motion.div
+        {/* BLOB 3: Left side, bottom */}
+        <div
           data-blob="about-3"
-          className="hidden lg:block absolute w-52 h-52 opacity-65 overflow-hidden pointer-events-none"
+          className="hidden lg:block absolute w-52 h-52 opacity-60 overflow-hidden pointer-events-none"
           style={{
-            backgroundImage: `url(/images/ubuntu-ii/002F20E0-7B3B-464E-A5AA-EBBEEE1EED4E-86619-00000D3A073BA9D0.JPG)`,
+            backgroundImage: `url(/images/straddie-pointlookout.webp)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-3 15s ease-in-out infinite alternate',
-            right: '5%',
-            bottom: '15%',
-            y: y3
+            left: '8%',
+            bottom: '8%'
+          }}
+        />
+
+        {/* BLOB 4: Right side, very bottom */}
+        <div
+          data-blob="about-4"
+          className="hidden lg:block absolute w-58 h-58 opacity-68 overflow-hidden pointer-events-none"
+          style={{
+            backgroundImage: `url(/images/straddie-sunset.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            animation: 'blob-morph-1 17s ease-in-out infinite alternate',
+            right: '7%',
+            bottom: '5%'
           }}
         />
 
