@@ -32,7 +32,7 @@ export default function VimeoPlayer({
       )}
 
       {/* Video Container - Responsive to video aspect ratio */}
-      <div className="relative w-full max-w-3xl mx-auto overflow-hidden border border-primary/20">
+      <div className="relative w-full max-w-md md:max-w-lg mx-auto overflow-hidden border border-primary/20">
         <div className="relative" style={{ paddingTop: '177.78%' }}> {/* 9:16 aspect ratio for vertical video */}
           <iframe
             src={`https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479&color=b8936a`}
