@@ -18,30 +18,50 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Get the access key
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+    // Debug: Check if access key exists
+    if (!accessKey) {
+      console.error('Web3Forms access key is missing!');
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+      return;
+    }
+
     try {
+      const payload = {
+        access_key: accessKey,
+        name: formData.name,
+        email: formData.email,
+        inquiry_type: formData.inquiryType,
+        message: formData.message,
+        subject: `Ubuntu Expo Contact Form - ${formData.inquiryType}`,
+      };
+
+      console.log('Submitting form...', { email: formData.email, name: formData.name });
+
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
-          name: formData.name,
-          email: formData.email,
-          inquiry_type: formData.inquiryType,
-          message: formData.message,
-          subject: `Ubuntu Expo Contact Form - ${formData.inquiryType}`,
-        }),
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
 
+      console.log('Web3Forms response:', result);
+
       if (result.success) {
+        console.log('Form submitted successfully!');
         setIsSubmitting(false);
         setSubmitStatus('success');
         setFormData({ name: '', email: '', inquiryType: 'general', message: '' });
         setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
+        console.error('Form submission failed:', result);
         setIsSubmitting(false);
         setSubmitStatus('error');
         setTimeout(() => setSubmitStatus('idle'), 5000);
