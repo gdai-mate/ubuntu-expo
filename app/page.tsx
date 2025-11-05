@@ -55,7 +55,7 @@ export default function Home() {
           data-blob="1-left-top"
           className="hidden lg:block absolute left-8 top-16 w-72 h-72 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/027FC2CD-B853-48A2-8175-1BD02F31513B-86619-00000D3EDF7393D4.JPG)`,
+            backgroundImage: `url(/images/ubuntu-ii/027FC2CD-B853-48A2-8175-1BD02F31513B-86619-00000D3EDF7393D4.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-1 10s ease-in-out infinite alternate',
@@ -70,7 +70,7 @@ export default function Home() {
           data-blob="2-left-middle"
           className="hidden lg:block absolute w-36 h-36 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/butterfly-art.jpg)`,
+            backgroundImage: `url(/images/ubuntu-ii/butterfly-art.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-1 13s ease-in-out infinite alternate',
@@ -87,7 +87,7 @@ export default function Home() {
           data-blob="3-left-middle-edge"
           className="hidden lg:block absolute w-44 h-44 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/EE7F21EA-7082-4534-8286-2885020F9D44-86619-00000D3A85F2B435.JPG)`,
+            backgroundImage: `url(/images/ubuntu-ii/EE7F21EA-7082-4534-8286-2885020F9D44-86619-00000D3A85F2B435.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-2 12s ease-in-out infinite alternate',
@@ -104,7 +104,7 @@ export default function Home() {
           data-blob="4-left-lower"
           className="hidden lg:block absolute left-12 w-52 h-52 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/botanical-art.jpg)`,
+            backgroundImage: `url(/images/ubuntu-ii/botanical-art.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-2 15s ease-in-out infinite alternate',
@@ -120,7 +120,7 @@ export default function Home() {
           data-blob="5-left-lower-center"
           className="hidden lg:block absolute w-40 h-40 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/2AE85DC3-DB8F-43F1-81FC-411CCFCD3C7C-86619-00000D3FCD9C4744.JPG)`,
+            backgroundImage: `url(/images/ubuntu-ii/2AE85DC3-DB8F-43F1-81FC-411CCFCD3C7C-86619-00000D3FCD9C4744.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-4 14s ease-in-out infinite alternate',
@@ -139,7 +139,7 @@ export default function Home() {
           data-blob="6-right-top"
           className="hidden lg:block absolute right-16 top-20 w-60 h-60 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/C70513BC-CCE4-4824-8D9E-9D2580F75601-86619-00000D3B593C5F02.JPG)`,
+            backgroundImage: `url(/images/ubuntu-ii/C70513BC-CCE4-4824-8D9E-9D2580F75601-86619-00000D3B593C5F02.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-3 11s ease-in-out infinite alternate',
@@ -154,7 +154,7 @@ export default function Home() {
           data-blob="7-right-middle-edge"
           className="hidden lg:block absolute w-56 h-56 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/280E68C6-8972-4D8F-B2DC-51093CA8808C-86619-00000D3FC99C9404.JPG)`,
+            backgroundImage: `url(/images/ubuntu-ii/280E68C6-8972-4D8F-B2DC-51093CA8808C-86619-00000D3FC99C9404.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-3 17s ease-in-out infinite alternate',
@@ -171,7 +171,7 @@ export default function Home() {
           data-blob="8-right-middle"
           className="hidden lg:block absolute w-36 h-36 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/chess-scene.jpg)`,
+            backgroundImage: `url(/images/ubuntu-ii/chess-scene.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-5 9s ease-in-out infinite alternate',
@@ -188,7 +188,7 @@ export default function Home() {
           data-blob="9-right-bottom"
           className="hidden lg:block absolute right-8 bottom-20 w-64 h-64 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/43453325-87C7-4CAA-9DCA-9748B2BCB707-86619-00000D3E8FAB43FE.JPG)`,
+            backgroundImage: `url(/images/ubuntu-ii/43453325-87C7-4CAA-9DCA-9748B2BCB707-86619-00000D3E8FAB43FE.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-4 14s ease-in-out infinite alternate',
@@ -203,7 +203,7 @@ export default function Home() {
           data-blob="10-right-lower-center"
           className="hidden lg:block absolute w-44 h-44 opacity-100 overflow-hidden"
           style={{
-            backgroundImage: `url(${basePath}/images/ubuntu-ii/92CD1F78-4397-44F8-A687-0BA036A8E4AC-86619-00000D40563BA310.JPG)`,
+            backgroundImage: `url(/images/ubuntu-ii/92CD1F78-4397-44F8-A687-0BA036A8E4AC-86619-00000D40563BA310.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-5 16s ease-in-out infinite alternate',
