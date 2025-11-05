@@ -31,16 +31,18 @@ export default function VimeoPlayer({
         </div>
       )}
 
-      {/* Video Container */}
-      <div className="relative w-full aspect-video overflow-hidden border border-primary/20">
-        <iframe
-          src={`https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479&color=b8936a`}
-          className="w-full h-full"
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-          referrerPolicy="strict-origin-when-cross-origin"
-          title={title}
-        />
+      {/* Video Container - Responsive to video aspect ratio */}
+      <div className="relative w-full max-w-3xl mx-auto overflow-hidden border border-primary/20">
+        <div className="relative" style={{ paddingTop: '177.78%' }}> {/* 9:16 aspect ratio for vertical video */}
+          <iframe
+            src={`https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479&color=b8936a`}
+            className="absolute inset-0 w-full h-full"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            referrerPolicy="strict-origin-when-cross-origin"
+            title={title}
+          />
+        </div>
       </div>
 
       {/* Vimeo Attribution */}
