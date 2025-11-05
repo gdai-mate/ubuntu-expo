@@ -121,47 +121,47 @@ export default function About() {
       {/* Location */}
       <section className="relative py-24 px-6 mb-32 w-full flex justify-center overflow-hidden">
         {/* Animated Blobs - Desktop Only */}
-        {/* BLOB 1: Top left */}
+        {/* BLOB 1: Left side, middle */}
         <motion.div
           data-blob="about-1"
-          className="hidden lg:block absolute w-52 h-52 opacity-90 overflow-hidden pointer-events-none"
+          className="hidden lg:block absolute w-56 h-56 opacity-70 overflow-hidden pointer-events-none"
           style={{
             backgroundImage: `url(/images/straddie-aerial.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-1 14s ease-in-out infinite alternate',
-            left: '5%',
-            top: '10%',
+            left: '2%',
+            top: '35%',
             y: y1
           }}
         />
 
-        {/* BLOB 2: Top right */}
+        {/* BLOB 2: Right side, upper */}
         <motion.div
           data-blob="about-2"
-          className="hidden lg:block absolute w-40 h-40 opacity-80 overflow-hidden pointer-events-none"
+          className="hidden lg:block absolute w-64 h-64 opacity-60 overflow-hidden pointer-events-none"
           style={{
             backgroundImage: `url(/images/hero.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-2 16s ease-in-out infinite alternate',
-            right: '8%',
-            top: '15%',
+            right: '3%',
+            top: '20%',
             y: y2
           }}
         />
 
-        {/* BLOB 3: Bottom left */}
+        {/* BLOB 3: Right side, lower */}
         <motion.div
           data-blob="about-3"
-          className="hidden lg:block absolute w-48 h-48 opacity-85 overflow-hidden pointer-events-none"
+          className="hidden lg:block absolute w-52 h-52 opacity-65 overflow-hidden pointer-events-none"
           style={{
             backgroundImage: `url(/images/ubuntu-ii/002F20E0-7B3B-464E-A5AA-EBBEEE1EED4E-86619-00000D3A073BA9D0.JPG)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             animation: 'blob-morph-3 15s ease-in-out infinite alternate',
-            left: '10%',
-            bottom: '20%',
+            right: '5%',
+            bottom: '15%',
             y: y3
           }}
         />
