@@ -7,9 +7,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 export default function Home() {
   const { scrollY } = useScroll();
 
-  // BasePath for GitHub Pages deployment
-  const basePath = process.env.NODE_ENV === 'production' ? '/ubuntu-expo' : '';
-
   // Parallax transforms - all blobs move faster than scroll (like raindrops falling up)
   const y1 = useTransform(scrollY, [0, 2000], [0, -400]);
   const y2 = useTransform(scrollY, [0, 2000], [0, -450]);
@@ -23,15 +20,15 @@ export default function Home() {
   const y10 = useTransform(scrollY, [0, 2000], [0, -460]);
 
   const galleryImages = [
-    { src: `${basePath}/images/ubuntu-ii/002F20E0-7B3B-464E-A5AA-EBBEEE1EED4E-86619-00000D3A073BA9D0.JPG`, alt: 'Ubuntu gathering' },
-    { src: `${basePath}/images/ubuntu-ii/248FFC77-9478-41C6-8ED6-3A55DB46E451-86619-00000D3A6BE9E23F.JPG`, alt: 'Celebration' },
-    { src: `${basePath}/images/ubuntu-ii/1449754C-1565-490A-A734-F3101FC27CF0-86619-00000D3DA7AFF9BE.JPG`, alt: 'Cultural celebration' },
-    { src: `${basePath}/images/ubuntu-ii/1D34948E-8FD5-4EEB-8D61-1C41EA3ADE31-86619-00000D3CD80EDE2C.JPG`, alt: 'Community moment' },
-    { src: `${basePath}/images/ubuntu-ii/03ED999D-0950-45EB-B973-DED868129CA6-86619-00000D3B10942F05.JPG`, alt: 'Community art' },
-    { src: `${basePath}/images/ubuntu-ii/67CCCC3F-56AD-4276-ADFC-3AA74CF8CA96-86619-00000D3AAE968FD6.JPG`, alt: 'Community celebration' },
-    { src: `${basePath}/images/ubuntu-ii/92CD1F78-4397-44F8-A687-0BA036A8E4AC-86619-00000D40563BA310.JPG`, alt: 'Evening gathering' },
-    { src: `${basePath}/images/ubuntu-ii/butterfly-art.jpg`, alt: 'Body paint art' },
-    { src: `${basePath}/images/ubuntu-ii/chess-scene.jpg`, alt: 'Ark of Pangea jewelry' },
+    { src: "/images/ubuntu-ii/002F20E0-7B3B-464E-A5AA-EBBEEE1EED4E-86619-00000D3A073BA9D0.JPG", alt: 'Ubuntu gathering' },
+    { src: "/images/ubuntu-ii/248FFC77-9478-41C6-8ED6-3A55DB46E451-86619-00000D3A6BE9E23F.JPG", alt: 'Celebration' },
+    { src: "/images/ubuntu-ii/1449754C-1565-490A-A734-F3101FC27CF0-86619-00000D3DA7AFF9BE.JPG", alt: 'Cultural celebration' },
+    { src: "/images/ubuntu-ii/1D34948E-8FD5-4EEB-8D61-1C41EA3ADE31-86619-00000D3CD80EDE2C.JPG", alt: 'Community moment' },
+    { src: "/images/ubuntu-ii/03ED999D-0950-45EB-B973-DED868129CA6-86619-00000D3B10942F05.JPG", alt: 'Community art' },
+    { src: "/images/ubuntu-ii/67CCCC3F-56AD-4276-ADFC-3AA74CF8CA96-86619-00000D3AAE968FD6.JPG", alt: 'Community celebration' },
+    { src: "/images/ubuntu-ii/92CD1F78-4397-44F8-A687-0BA036A8E4AC-86619-00000D40563BA310.JPG", alt: 'Evening gathering' },
+    { src: "/images/ubuntu-ii/butterfly-art.jpg", alt: 'Body paint art' },
+    { src: "/images/ubuntu-ii/chess-scene.jpg", alt: 'Ark of Pangea jewelry' },
   ];
 
   return (
@@ -41,7 +38,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src={`${basePath}/images/hero.jpg`}
+            src={"/images/hero.jpg"}
             alt="Ubuntu Expo community gathering"
             fill
             className="object-cover"

@@ -14,26 +14,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const isProd = process.env.NODE_ENV === 'production';
-const basePath = isProd ? '/ubuntu-expo' : '';
-
 export const metadata: Metadata = {
   title: "Ubuntu Expo - Art, Culture & Music Festival | Minjerribah",
   description: "Ubuntu Expo brings together art, culture, music, and community on Minjerribah (Stradbroke Island). I am because we are.",
   keywords: ["Ubuntu Expo", "Minjerribah", "Stradbroke Island", "art festival", "music festival", "cultural festival", "community"],
   icons: {
-    icon: `${basePath}/icon.png`,
-    apple: `${basePath}/icon.png`,
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
   openGraph: {
     title: "Ubuntu Expo - Art, Culture & Music Festival",
     description: "Celebrating art, culture, and music on Minjerribah. I am because we are.",
     type: "website",
-    url: "https://gdai-mate.github.io/ubuntu-expo",
+    url: "https://ubuntu-expo.com",
     siteName: "Ubuntu Expo",
     images: [
       {
-        url: `${basePath}/ubuntu-logo.png`,
+        url: "/ubuntu-logo.png",
         width: 1200,
         height: 630,
         alt: "Ubuntu Expo - I am because we are",
@@ -44,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ubuntu Expo - Art, Culture & Music Festival",
     description: "Celebrating art, culture, and music on Minjerribah. I am because we are.",
-    images: [`${basePath}/ubuntu-logo.png`],
+    images: ["/ubuntu-logo.png"],
   },
 };
 
